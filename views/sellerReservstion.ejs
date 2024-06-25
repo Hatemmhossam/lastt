@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Reservation</title>
+    <link rel="stylesheet" href="/css/sellerReservation.css">
+</head>
+
+<table>
+    <thead>
+        <tr>
+            <th>Reservation ID</th>
+            <th>Restaurant Email</th>
+            <th>Customer Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Guests</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% reservations.forEach(reservation => { %>
+            <% if (reservation.restaurantEmail === restaurant.email) { %>
+                <tr>
+                    <td><%= reservation._id %></td>
+                    <td><%= reservation.restaurantEmail %></td>
+                    <td><%= reservation.customerEmail %></td>
+                    <td><%= reservation.date.toISOString().split('T')[0] %></td>
+                    <td><%= reservation.time %></td>
+                    <td><%= reservation.numberOfPeople %></td>
+                    <td>
+                        
+                        <form action="/deleteReservation/<%= reservation._id %>" method="POST" class="inline-form">
+                            <input type="submit" value="Delete" class="delete-btn">
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        <% }); %>
+    </tbody>
+</table>
+    
+   
+  
+    
+</body>
+</html>

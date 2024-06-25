@@ -1,0 +1,126 @@
+body {
+    background-image: url("https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg");
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+     background-size: cover;
+}
+
+
+.container {
+    max-width: 800px;
+    margin-top: 100px;
+    margin-left: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #f0f0f0; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#userInfoForm {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Set a darker color for labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 40%;
+    padding: 5px;
+    box-sizing: border-box; /* Include padding in input's total width */
+    border: 1px solid #ccc; /* Add a border to input fields */
+    border-radius: 3px; /* Add a slight border radius */
+}
+
+#editButton,
+#saveButton {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#logoutButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#editButton:hover,
+#saveButton:hover,
+#logoutButton:hover {
+    background-color: #555;
+}
+.iframe-styling {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0; /* Position at the top of the page */
+    left: 0;
+    z-index: 998; /* Lower than the openbtn */
+    text-align: right; /* Align the text to the right */
+    border: none;
+}
+#reser {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#reser:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduced padding on smaller screens */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: calc(100% - 20px); /* Adjusted input width to accommodate padding */
+    }
+
+    #logoutButton {
+        position: relative; /* Return to normal flow */
+        margin-top: 20px; /* Added margin top for spacing */
+        bottom: auto;
+        right: auto;
+    }
+}

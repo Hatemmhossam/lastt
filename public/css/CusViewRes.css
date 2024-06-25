@@ -1,0 +1,225 @@
+body {
+    background-image: url('https://img.freepik.com/free-photo/people-taking-part-high-protocol-event_23-2150951471.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    height: 100vh; /* Use viewport height */
+    margin: 0;
+    
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.reservation-card {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.reservation-card img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.reservation-details {
+    padding: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* CusViewRes.css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rate {
+    float: right;
+    height: 70px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* Add styles for 5 stars */
+input#star5:checked ~ label#star4:before,
+input#star5:checked ~ label#star3:before,
+input#star5:checked ~ label#star2:before,
+input#star5:checked ~ label#star1:before {
+    color: #ccc;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.scrollable-reservations {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+    /* Example inline CSS for simplicity */
+    .reservation-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    .restaurant-info {
+        margin-right: 20px;
+    }
+    .restaurant-info img {
+        width: 100px; /* Adjust size as needed */
+        height: 100px; /* Adjust size as needed */
+        object-fit: cover; /* Ensure the image maintains aspect ratio */
+        border-radius: 50%; /* Optional: round corners */
+    }
+    .reservation-details {
+        flex: 1; /* Take remaining space */
+    }
+    @media (max-width: 768px) {
+        .container {
+            max-width: 100%;
+            margin: 10px;
+            padding: 10px;
+        }
+    
+        .reservation-card {
+            flex-direction: column; /* Stack items vertically on mobile */
+        }
+    
+        .reservation-card img {
+            width: 100%; /* Full width on mobile */
+            height: auto; /* Adjust height automatically */
+        }
+    
+        .reservation-details {
+            padding: 10px;
+        }
+    
+        button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+    
+        .modal-content {
+            margin: 30% auto;
+            padding: 10px;
+            width: 90%;
+        }
+    
+        .rate {
+            float: none;
+            text-align: center;
+            padding: 0;
+        }
+    
+        .rate label {
+            font-size: 25px;
+        }
+    
+        .scrollable-reservations {
+            max-height: 300px;
+            padding-right: 5px;
+        }
+    }

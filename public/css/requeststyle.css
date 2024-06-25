@@ -1,0 +1,159 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container, #request-list {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styles for forms and form elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="time"],
+select,
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #003875;
+}
+
+/* Styles for request display */
+.request-item {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #0056b3;
+}
+
+.request-item h2 {
+    color: #0056b3;
+}
+
+.request-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.accept-btn {
+    background-color: green; /* Green */
+    color: white;
+}
+
+.decline-btn {
+    background-color: red; /* Red */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .container, #request-list {
+        padding: 10px; /* Further reduced padding for smaller screens */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="time"],
+    select,
+    textarea {
+        padding: 6px; /* Further reduced padding for smaller screens */
+        font-size: 12px; /* Further reduced font size for smaller screens */
+    }
+
+    input[type="submit"] {
+        padding: 8px 12px; /* Adjusted padding for smaller screens */
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    .request-item {
+        padding: 6px; /* Further reduced padding for smaller screens */
+        margin-bottom: 10px; /* Further reduced margin for smaller screens */
+    }
+
+    .request-item h2 {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+
+    .request-item p {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+    }
+
+    button {
+        padding: 5px 8px; /* Further reduced padding for smaller screens */
+        margin-right: 6px; /* Further reduced margin for smaller screens */
+        font-size: 12px; /* Further reduced font size for smaller screens */
+    }
+}

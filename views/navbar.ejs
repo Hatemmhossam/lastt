@@ -1,0 +1,26 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/css/homeStyle.css">
+</head>
+
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/AboutUs">About Us</a>
+    <a href="/resturants">Restaurants</a>
+    <a href="/contact">Contact</a>
+
+    <% if (user) { %>
+        <a href="/profile">
+            <%= user.name %> <span style="font-size: 18px;" role="img" aria-label="man emoji">👨</span>
+        </a>
+    <% } else { %>
+        <a href="/signin">Sign In</a>
+    <% } %>
+</div>
+
+
+

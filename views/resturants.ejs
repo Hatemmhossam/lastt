@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="/css/resturantsStyle.css">
+    <link rel="icon" href="https://cdn5.f-cdn.com/contestentries/70431/10651466/53406793a0826_thumb900.jpg" type="image/x-icon"/>
+
+</head>
+<body>
+    <div id="main-content">
+    <%- include("navbar.ejs") %>
+    <div class="image-gallery">
+        <div class="slide fade">
+            <img src="https://sizzleregypt.com/qiqijag/2021/01/maadibanner.png" alt="Image 1">
+            <div class="text-overlay">
+                <h2>Reserve Your Table Today!</h2>
+                <p>There is no sincerer love than the love of food.</p>
+            </div>
+        </div>
+        <div class="slide fade">
+            <img src="https://theinsideruae.files.wordpress.com/2015/09/rhubarb-at-sky-garden-sized92.jpg" alt="Image 2">
+            <div class="text-overlay">
+                <h2>Discover New Tastes!</h2>
+                <p>Explore unique flavors from around the world.</p>
+            </div>
+        </div>
+        <div class="slide fade">
+            <img src="https://top10cairo.com/wp-content/uploads/2023/10/The-Best-Restaurants-in-Cairo.jpg" alt="Image 3">
+            <div class="text-overlay">
+                <h2>Experience Culinary Excellence</h2>
+                <p>Our chefs create magic on a plate every day.</p>
+            </div>
+        </div>
+        <div class="slide fade">
+            <img src="https://t3.ftcdn.net/jpg/06/37/16/64/360_F_637166455_RZOHg6K3M6noLPKQmOHH5ZI70zXEyDaq.jpg" alt="Image 4">
+            <div class="text-overlay">
+                <h2>A Night to Remember</h2>
+                <p>Perfect settings for your special occasions.</p>
+            </div>
+        </div>
+    </div>
+   
+            
+    
+
+    <div class="moving-text-container">
+        <p class="moving-text">
+            &emsp;&emsp;&ensp;Explore our extensive selection of restaurants &emsp;&emsp; Explore our extensive selection of restaurants &emsp;&emsp; Explore our extensive selection of restaurants &emsp;&emsp; Explore our extensive selection of restaurants
+        </p>
+        
+    </div>
+    
+    
+
+    <div class="container">
+        <form id="category-form">
+            <select id="category" name="category" required>
+                <option value="All" selected>All</option>
+                <option value="Fancy outing">Fancy outing</option>
+                <option value="Casual outing">Casual outing</option>
+                <option value="After party">After party</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Birthday">Birthday</option>
+            </select>
+        </form>
+    
+        <input type="text" id="search-input" placeholder="Search For Restaurant"> 
+        <br>
+    
+        <label for="checkbox">See Nearby Options?</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+    </div>
+    
+
+    <section class="restaurants" id="restaurants">
+        <% if (restaurants && restaurants.length > 0) { %>
+            <% restaurants.forEach(restaurant => { %>
+                <div class="restaurant">
+                    <a href="/restaurant/<%= restaurant._id %>">
+                        <img src="<%= restaurant.logoUrl %>" alt="<%= restaurant.name %>">
+                        <h3><%= restaurant.name %></h3>
+                    </a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No restaurants available</p>
+        <% } %>
+    </section>
+
+</div>
+<button id="open-game-btn" onclick="openMemoryGame()">WANT A DISCOUNT?</button>
+
+        
+    <div class="pagination">
+        <% if (current > 1) { %>
+            <a href="/resturants?page=<%= current - 1 %>">Previous</a>
+        <% } %>
+
+        <% for (let i = 1; i <= pages; i++) { %>
+            <a href="/resturants?page=<%= i %>" class="<%= current === i ? 'active' : '' %>"><%= i %></a>
+        <% } %>
+
+        <% if (current < pages) { %>
+            <a href="/resturants?page=<%= current + 1 %>">Next</a>
+        <% } %>
+    </div>
+
+   
+</section>
+</div>
+<div id="memory-game-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeMemoryGame()">&times;
+            
+</span>
+<div class="memory-game-container">
+    <div class="game-container">
+        <h1>Memory Card Game</h1>
+        <div class="grid" id="grid"></div>
+        <p id="message"></p>
+        <p id="coupon" class="hidden">Congratulations! You've won a discount. Your coupon code is: <span id="coupon-code"></span></p>
+    </div>
+</div>
+</div>
+</div> 
+<script src="/js/memory-game.js"></script>
+    <script src="/js/restaurants.js"></script>
+
+    
+</body>
+
+
+       
+</html>

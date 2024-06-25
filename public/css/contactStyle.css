@@ -1,0 +1,77 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/007/113/040/non_2x/wood-cube-with-phone-email-and-post-icons-on-white-table-over-blur-bokeh-light-background-copy-space-contact-us-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: Keeps the background fixed during scrolling */
+    
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.contact {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for readability */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    width: 300px; /* Adjust based on your layout */
+}
+
+.contact h3 {
+    color: #333;
+}
+
+.contact p {
+    font-size: 16px;
+    color: #666;
+}
+
+.contact a {
+    color: #007bff;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #0056b3;
+}
+.iframe-styling {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 998; /* Lower than the openbtn */
+    text-align: right; /* Align the text to the right */
+border: none;
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px;
+    }
+
+    .contact {
+        width: 100%; /* Full width for each item */
+        margin: 10px 0; /* Space out items vertically */
+    }
+
+    .contact h3 {
+        font-size: 18px;
+    }
+
+    .contact p {
+        font-size: 14px;
+    }
+
+    .contact a {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,388 @@
+body, html {
+    background-color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .container {
+    width: 100%; /* Make sure outer containers are also full width */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Add bottom margin */
+    position: relative;
+    display: inline-block;
+  }
+  
+   
+
+
+
+#category {
+    margin-top: 40px;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    flex-grow: 1; 
+   width: 350px;
+}
+
+#category:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #007bff; /* Change border color when focused */
+}
+
+#checkbox {
+    transform: scale(1.5); 
+    margin-left: 10px;
+margin-top: 25px;
+
+}
+#submit{
+    margin-left: 15px;
+   width: 100px;
+   padding: 3px;
+   font-size: 17px;
+   border-radius: 10px;
+   cursor: pointer;
+}
+.container input[type=submit]:hover{
+
+    background-color: darkgray;
+}
+
+form {
+    margin-right: 10px; /* Add margin between the form and the next element */
+  
+}
+
+label {
+    margin-right: 5px; /* Add margin between the label and the checkbox */
+    font-size: 25px;
+}
+
+
+
+.restaurants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.restaurant {
+    background:white;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.restaurant u {
+    color: #333;
+  font-size: 25px;
+    
+}
+.restaurant span {
+    font-size: 50px;
+  
+}
+.restaurant:hover{
+    transform: translateY(-10px); /* Moves the card up by 10 pixels /
+    cursor: pointer; / Changes the cursor to indicate it's clickable */
+}
+
+
+
+.restaurant-img img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.restaurant-info {
+    margin-top: 1rem;
+}
+.restaurant-cat {
+    color: #333;
+}
+.restaurant-info a {
+    color: #06c;
+    text-decoration: none;
+}
+@media(max-width: 700px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .card {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+.top-image {
+    width: 100%; /* Adjust as needed */
+    max-height: 250px; /* Set maximum height */
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+.moving-text-container {
+    width: 100%; /* Full width of the viewport */
+    overflow: hidden; /* Hide anything going out of the box */
+    white-space: nowrap; /* Keep all text in a single line */
+ 
+}
+
+.moving-text {
+    display: inline-block;
+    font-size: 24px; /* Larger font size */
+    animation: moveText 15s linear infinite; /* Smooth continuous motion */
+
+}
+
+@keyframes moveText {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%); /* Only move half the total width to start repeating halfway through */
+    }
+}
+
+
+
+.image-gallery {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+.slide {
+    display: none;
+    position: relative;
+    width: 100%; /* Full width of the container */
+    height: auto; /* Height is auto, but you can adjust this as needed */
+}
+
+.slide img {
+    width: 100%; /* Makes image full width */
+    height: auto; /* Keeps image proportional */
+    object-fit: cover; /* Ensures the image covers the designated area */
+    max-height: 350px; /* Adjust max height as needed to control slideshow height */
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for readability */
+    padding: 20px;
+    width: 100%;
+    text-align: center; /* Centers the text */
+}
+
+/* Fading animation */
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+/* Set an infinite slideshow */
+.image-gallery .slide:target {
+    display: block;
+    animation: fade 1.5s;
+}
+
+.iframe-styling {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 998; /* Lower than the openbtn */
+    text-align: right; /* Align the text to the right */
+border: none;
+}
+
+
+
+
+.container input[type=text] {
+    padding: 10px;
+    width: 325px;
+    border: 1px solid black;
+    height: 20px;
+    border-radius: 15px;
+    font-size: 16px;
+margin-top: 20px;    
+}
+
+.container input[type=submit] {
+    margin-left: 15px;
+    width: 100px;
+    padding: 3px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container input[type=submit]:hover {
+    background-color: darkgray;
+}
+
+.restaurant {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.card-image {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Add more styles as necessary */
+/* Modal styles */
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999; /* Higher than other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.blur {
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+}
+
+.hidden {
+    display: none;
+}
+
+.memory-game-container {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: none; /* Remove border */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    perspective: 1000px;
+    position: relative; /* Added position relative for stacking */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform: rotateY(0); /* Start with front side visible */
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg); /* Flip to show back side */
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.card-front {
+    background-color: #2ecc71; /* Green background for front of card */
+    transform: rotateY(0); /* Ensure front is facing initially */
+}
+
+.card-back {
+    background-color: #3498db; /* Blue background for back of card */
+    transform: rotateY(180deg); /* Initially hidden */
+/* Add this to your existing CSS file or create a new one */
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #f2f2f2;
+    color: black;
+    border-radius: 5px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}

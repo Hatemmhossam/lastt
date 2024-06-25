@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <%- include("navbar.ejs") %>
+
+    <div class="container">
+        <% if (user) { %>
+            <h1>User Profile</h1>
+            <p>Name: <%= user.name %></p>
+            <p>Email: <%= user.email %></p>
+            <p>Phone: <%= user.phone %></p>
+            <p> <a href="/CusViewRes" class="btn">View Reservations History</a>
+            </p>
+            
+        <% } else if (restaurant) { %>
+            <h1>Restaurant Profile</h1>
+            <p>Name: <%= restaurant.name %></p>
+            <p>Email: <%= restaurant.email %></p>
+            <p>Phone: <%= restaurant.phone %></p>
+            <p>Address: <%= restaurant.location %></p>
+            <p>Opening Time: <%= restaurant.openingTime %></p>
+            <p>Closing Time: <%= restaurant.closingTime %></p>
+        <% } %>
+        <a href="/logout" id="logoutButton">Logout</a>
+    </div>
+
+    
+</body>
+</html>

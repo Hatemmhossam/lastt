@@ -1,0 +1,139 @@
+body {
+    background-image: url('https://www.efinancialmodels.com/wp-content/uploads/2024/04/20240409-162147.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Use viewport height */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.7); /* Increase opacity */
+    width: 450px;
+    padding: 20px;
+    margin: 90px auto; /* Use margin shorthand */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Increase opacity */
+    border-radius: 5px;
+    border: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 20px; /* Adjust font size */
+}
+
+input[type="submit"] {
+    width: calc(80% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: dimgrey;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add transition */
+}
+
+input[type="submit"] {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: black;
+  }
+  
+  input[type="submit"]::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:gray;
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #444;
+    opacity: 1; 
+  }
+  
+  input[type="submit"]:hover::before {
+    transform-origin: center top;
+    transform: scaleY(1);
+  }
+
+
+
+
+
+input[type="button"]:hover {
+    background-color: #444; /* Darken color on hover */
+}
+
+h2 {
+    color: black;
+    font-size: 17px;
+    text-align: right;
+    margin-right: auto;
+}
+
+a {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition */
+}
+
+a:hover {
+    color: #333; /* Darken color on hover */
+}
+a {
+    color: blue; /* Set color to blue for the specified link */
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}

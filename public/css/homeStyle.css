@@ -1,0 +1,198 @@
+body, html {
+    height: 100%;
+   
+        margin: 0;
+        padding: 0;
+    
+
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.bg-image {
+    /* The image used */
+    background-image: url('https://www.thedailymeal.com/img/gallery/35-restaurants-that-will-give-you-free-food-on-your-birthday-upgrade/introduction-1693502049.jpg');
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1; /* Behind the content */
+   
+}
+
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+      
+    }
+    to {
+        opacity: 1;
+       
+    }
+}
+
+/* Overlay Text */
+.bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(-20px);
+    z-index: 999; /* Ensure it's on top */
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    animation: fadeIn 1.5s ease-out;
+}
+
+
+
+
+
+
+
+/* Navbar Styles */
+.navbar {
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 0; /* Remove any top margin */
+    padding-top: 0; /* Remove any top padding */
+    z-index: 998; /* Lower than the openbtn */
+    text-align: right; /* Align the text to the right */
+    
+}
+
+
+.navbar a {
+    display: inline-block; /* Inline block for alignment */
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 0; /* Start off as hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    transition: 0.5s; /* Smooth transition for opening/closing */
+    padding-top: 60px;
+    z-index: 999; /* Make sure sidebar is on top */
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    margin-bottom: 10px; /* Adds space between the elements */
+  }
+  
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    opacity: 0.5; /* Set the opacity to 0.5 for the button */
+    position: fixed; /* Fixed positioning relative to the viewport */
+    top: 0; /* Place at the top */
+    left: 0; /* Place at the left */
+    z-index: 999; /* Higher than the navbar to ensure it's on top */
+}
+
+.openbtn:hover {
+    background-color: #444;
+    opacity: 1; /* Full opacity on hover */
+}  
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+button {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: rgb(104, 100, 100);
+  }
+  
+  button::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:black;
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  button:hover::before {
+    transform-origin: center top;
+    transform: scaleY(1);
+  }
+
+  .iframe-styling {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 998; /* Lower than the openbtn */
+    text-align: right; /* Align the text to the right */
+border: none;
+}
+

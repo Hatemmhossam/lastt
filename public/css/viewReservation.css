@@ -1,0 +1,238 @@
+body {
+    background-image: url('https://img.freepik.com/free-photo/people-taking-part-high-protocol-event_23-2150951471.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color:dimgrey;
+}
+
+/* viewReservation.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.delete-btn{
+    background-color: red;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+
+}
+
+.edit-btn{
+    background-color: grey;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+
+}
+
+
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: calc(100% - 12px);
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    width: auto;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+}
+@media (max-width: 768px) { /* Resetting default browser styles */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #343a40;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        margin-bottom: 20px; /* Added margin for separation */
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        margin: 0 auto; /* Center align and remove default body padding */
+        max-width: 1000px; /* Adjusted max-width for larger screens */
+    }
+
+    .reservation-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%; /* Full width on mobile */
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        margin-bottom: 20px; /* Added margin bottom for separation */
+    }
+
+    .reservation-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .reservation-details {
+        padding: 20px;
+    }
+
+    .reservation-details h2 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.5em; /* Adjusted font size for mobile */
+    }
+
+    .reservation-details p {
+        color: #666;
+        margin-bottom: 10px;
+        font-size: 0.9em; /* Adjusted font size for mobile */
+    }
+
+    .reservation-details .info-label {
+        font-weight: bold;
+    }
+
+    .reservation-details .info-value {
+        margin-left: 5px;
+    }
+
+    .reservation-details .btn-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .reservation-details .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 0.9em; /* Adjusted font size for mobile */
+    }
+
+    .reservation-details .btn:hover {
+        background-color: #0056b3;
+    }
+}    

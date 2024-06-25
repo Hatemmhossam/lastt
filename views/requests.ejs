@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Requests</title>
+    <link rel="stylesheet" href="/css/requeststyle.css"> <!-- Link to your CSS stylesheet -->
+    <link rel="icon" href="https://cdn5.f-cdn.com/contestentries/70431/10651466/53406793a0826_thumb900.jpg" type="image/x-icon"/>
+</head>
+<body>
+    <h1>View Requests</h1>
+    <div id="request-list">
+        <ul>
+            <% restaurants.forEach(restaurant => { %>
+                <li>
+                    <h2><%= restaurant.name %></h2>
+                    <p>Email: <%= restaurant.email %></p>
+                    <p>Location: <%= restaurant.location %></p>
+                    <p>Description: <%= restaurant.description %></p>
+                    <p>Category: <%= restaurant.category %></p>
+                    <p>Phone: <%= restaurant.phone %></p>
+                    <p>Opening Time: <%= restaurant.openingTime %></p>
+                    <p>Closing Time: <%= restaurant.closingTime %></p> 
+                    <p>menu: <%= restaurant.menuUrl %></p>
+                    <p>Location: <%= restaurant.locationUrl %></p>
+                    <p>Logo: <%= restaurant.logoUrl %></p>
+                    <p>Photo: <%= restaurant.photoUrl %></p>
+
+
+
+
+                    <p>
+                        <form action="/requests/<%= restaurant._id %>/accept" method="POST" style="display: inline;">
+                            <button type="submit" class="accept-btn">Accept</button>
+                        </form>
+                        <form action="/requests/<%= restaurant._id %>/decline" method="POST" style="display: inline;">
+                            <button type="submit" class="decline-btn">Decline</button>
+                        </form>
+                    </p>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

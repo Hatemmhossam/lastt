@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Restaurant Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/sellerReservstion">View Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="dashboard-summary">
+        <div class="summary-item">
+            <h2>Total Reservations</h2>
+            <p><span id="reservations-count"><%= totalReservations %></span></p>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>Restaurant Dashboard ©️ 2024</p>
+    </footer>
+</body>
+</html>

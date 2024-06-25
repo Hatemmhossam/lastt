@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/requests">Requests</a></li>
+                <li><a href="/viewRestraunts">Manage Users</a></li>
+                <li><a href="/viewReservation">View Reservations</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="dashboard-summary">
+        <div class="summary-item">
+            <h2>Total Clients</h2>
+            <p><span id="users-count"><%= totalClients %></span></p>
+        </div>
+    
+        <div class="summary-item">
+            <h2>Requests Pending</h2>
+            <p><span id="request-count"><%= pendingRequests %></span></p>
+        </div>
+    
+        <div class="summary-item">
+            <h2>Total Non-Pending Restaurants</h2>
+            <p><span id="restaurants-count"><%= totalNonPendingRestaurants %></span></p>
+        </div>
+    </div>
+    
+
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <p>Admin Dashboard ©️ 2024</p>
+    </footer>
+</body>
+</html>

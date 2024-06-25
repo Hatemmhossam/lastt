@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/CusViewRes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reservations</title>
+</head>
+<body>
+    <div class="container">
+        <h1>My Reservations</h1>
+        <div class="scrollable-reservations" id="reservation-list">
+            <% reservations.forEach(reservationWithData => { %>
+                <div class="reservation-item">
+                    <div class="restaurant-info">
+                        <img src="<%= reservationWithData.restaurant.logoUrl %>" alt="Restaurant Photo">
+                        <h2><%= reservationWithData.restaurant.name %></h2>
+                    </div>
+                    <div class="reservation-details">
+                        <p><strong>Date:</strong> <%= reservationWithData.reservation.date.toDateString() %></p>
+                        <p><strong>Time:</strong> <%= reservationWithData.reservation.time %></p>
+                        <p><strong>Number of People:</strong> <%= reservationWithData.reservation.numberOfPeople %></p>
+                        <p><strong>Discount:</strong> <%= reservationWithData.reservation.discount %>%</p>
+
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    
+</body>
+</html>

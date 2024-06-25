@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= mytitle %></title>
+    <link rel="stylesheet" href="/css/viewRestraunts.css">
+    <link rel="icon" href="https://cdn5.f-cdn.com/contestentries/70431/10651466/53406793a0826_thumb900.jpg" type="image/x-icon"/>
+</head>
+<body>
+    <h1>Manage Data</h1>
+    
+    <label for="type">Type:</label>
+    <select id="type" name="type" required>
+        <option value="Restaurant">Restaurant</option>
+        <option value="User">User</option>
+    </select>
+
+    <div id="restaurantList" class="section">
+        <div class="list">
+            <!-- Restaurant form -->
+            <div class="container">
+                <form id="addRestaurantForm" action="/restaurants/add" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" required>
+                        <option value="" selected disabled>Select your location</option>
+                        <option value="Maadi">Maadi</option>
+                        <option value="New Cairo">New Cairo</option>
+                        <option value="Nasr city">Nasr city</option>
+                        <option value="Shrouk">Shrouk</option>
+                        <option value="Sheikh Zayed">Sheikh Zayed</option>
+                        <option value="6th of October">6th of October</option>
+                    </select>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                    
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category" required>
+                    
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]+" title="Please enter only numeric characters (0-9)" required>
+                    <div class="error-message" id="phone-error" style="display: none;">Please enter only numeric characters (0-9).</div>
+                            
+                    <label for="openingTime">Opening Time:</label>
+                    <input type="time" id="openingTime" name="openingTime" required>
+                    
+                    <label for="closingTime">Closing Time:</label>
+                    <input type="time" id="closingTime" name="closingTime" required>
+                    
+                    <label for="menuUrl">Menu URL:</label>
+                    <input type="url" id="menuUrl" name="menuUrl" required>
+                    
+                    <label for="locationUrl">Location URL:</label>
+                    <input type="url" id="locationUrl" name="locationUrl" required>
+                    
+                    <label for="logoUrl">Logo URL:</label>
+                    <input type="url" id="logoUrl" name="logoUrl" required>
+                    
+                    <label for="photoUrl">Photo URL:</label>
+                    <input type="url" id="photoUrl" name="photoUrl" required>
+                    
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="pending">pending</option>
+                        <option value="accepted">accepted</option>
+                    </select>
+                    
+                    <button type="submit">Add Restaurant</button>
+                </form>
+            </div>
+
+            <!-- Restaurant list -->
+            <div id="request-list">
+                <ul>
+                    <% arr.forEach(restaurantdata => { %>
+                        <li>
+                            <h2><%= restaurantdata.name %></h2>
+                            <p>Email: <%= restaurantdata.email %></p>
+                            <p>Location: <%= restaurantdata.location %></p>
+                            <p>Description: <%= restaurantdata.description %></p>
+                            <p>Category: <%= restaurantdata.category %></p>
+                            <p>Phone: <%= restaurantdata.phone %></p>
+                            <p>Opening Time: <%= restaurantdata.openingTime %></p>
+                            <p>Closing Time: <%= restaurantdata.closingTime %></p>
+                            <p>Menu: <%= restaurantdata.menuUrl %></p>
+                            <p>Location: <%= restaurantdata.locationUrl %></p>
+                            <p>Logo: <%= restaurantdata.logoUrl %></p>
+                            <p>Photo: <%= restaurantdata.photoUrl %></p>
+                            <p>Status: <%= restaurantdata.status %></p>
+                            <p>
+                                <form action="/restaurants/<%= restaurantdata._id %>/edit" method="GET" style="display: inline;">
+                                    <button type="submit">Edit</button>
+                                </form>
+                                <form action="/restaurants/<%= restaurantdata._id %>/delete" method="POST" style="display: inline;">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </p>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="userList" class="section hidden">
+        <div class="list">
+            <!-- User form -->
+            <div class="container">
+                <form id="addUserForm" action="/users/add" method="POST">
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" name="name" required>
+                    
+                    <label for="userEmail">Email:</label>
+                    <input type="email" id="userEmail" name="email" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="userpassword" name="password" required>
+                    
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]+" title="Please enter only numeric characters (0-9)" required>
+                    <div class="error-message" id="phone-error" style="display: none;">Please enter only numeric characters (0-9).</div>
+                    
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" required>
+                        <option value="" selected disabled>Select your location</option>
+                        <option value="Maadi">Maadi</option>
+                        <option value="New Cairo">New Cairo</option>
+                        <option value="Nasr city">Nasr city</option>
+                        <option value="Shrouk">Shrouk</option>
+                        <option value="Sheikh Zayed">Sheikh Zayed</option>
+                        <option value="6th of October">6th of October</option>
+                    </select>
+                    
+                    <button type="submit">Add User</button>
+                </form>
+            </div>
+
+            <!-- User list -->
+            <div id="user-request-list">
+                <ul>
+                    <% userArr.forEach(user => { %>
+                        <li>
+                            <h2><%= user.name %></h2>
+                            <p>Email: <%= user.email %></p>
+                            <p>Password: <%= user.password %></p>
+                            <p>Phone: <%= user.phone %></p>
+                            <p>Location: <%= user.location %></p>
+                            <p>
+                                <form action="/users/<%= user._id %>/edit" method="GET" style="display: inline;">
+                                    <button type="submit">Edit</button>
+                                </form>
+                                <form action="/users/<%= user._id %>/delete" method="POST" style="display: inline;">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </p>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // jQuery script to toggle visibility based on dropdown selection
+        $(document).ready(function() {
+            $('#type').change(function() {
+                var selectedType = $(this).val();
+                if (selectedType === 'Restaurant') {
+                    $('#restaurantList').removeClass('hidden');
+                    $('#userList').addClass('hidden');
+                } else if (selectedType === 'User') {
+                    $('#userList').removeClass('hidden');
+                    $('#restaurantList').addClass('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

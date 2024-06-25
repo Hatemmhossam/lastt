@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Out</title>
+    <link rel="stylesheet" href="/css/homeStyle.css">
+    
+  
+</head>
+
+<body>
+  <%- include("navbar.ejs") %>
+  <div class="bg-image"></div>
+
+  <div class="bg-text">
+    <% if (user) { %>
+        <h2>Welcome <%= user.name %>!</h2>
+    <% } else { %>
+        <h2>Welcome to Night Out!</h2>
+    <% } %>
+    <p>Welcome to Night Out! Your one-stop destination for booking the best dining experiences. Discover and reserve tables at top restaurants with ease.</p>
+    <button id="reserve-button">Reserve Now!</button>
+</div>
+
+
+<script>
+  document.getElementById('reserve-button').addEventListener('click', function() {
+      window.location.href = 'resturants';
+  });
+</script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+}
+
+.summary-item {
+    text-align: center;
+    margin: 20px;
+}
+
+.latest-updates {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+.latest-updates h2 {
+    color: #333;
+}
+
+.latest-updates ul {
+    padding: 0;
+}
+
+.latest-updates li {
+    list-style-type: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0; /* Space out links vertically */
+    }
+
+    .dashboard-summary {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px;
+    }
+
+    .summary-item {
+        margin: 10px 0; /* Space out items vertically */
+        flex-basis: 100%; /* Full width for each item */
+    }
+
+    .latest-updates {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .latest-updates li {
+        padding: 5px;
+    }
+}

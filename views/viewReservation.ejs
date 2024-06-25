@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservations - Admin</title>
+    <link rel="stylesheet" href="/css/viewReservation.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Reservations</h1>
+        
+        <% if (errorMessage) { %>
+            <div class="error-message"><%= errorMessage %></div>
+        <% } %>
+
+        <form action="/addReservation" method="POST" class="add-form">
+            <div class="form-group">
+                <label for="restaurantEmail">Restaurant Email:</label>
+                <input type="email" name="restaurantEmail" id="restaurantEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="customerEmail">Customer Email:</label>
+                <input type="email" name="customerEmail" id="customerEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="numberOfPeople">Number of People:</label>
+                <input type="number" name="numberOfPeople" id="numberOfPeople" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" name="time" id="time" required>
+            </div>
+            <button type="submit" class="submit-btn">Add Reservation</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Reservation ID</th>
+                    <th>Restaurant Email</th>
+                    <th>Customer Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Guests</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% reservations.forEach(reservation => { %>
+                    <tr>
+                        <td><%= reservation._id %></td>
+                        <td><%= reservation.restaurantEmail %></td>
+                        <td><%= reservation.customerEmail %></td>
+                        <td><%= reservation.date.toISOString().split('T')[0] %></td>
+                        <td><%= reservation.time %></td>
+                        <td><%= reservation.numberOfPeople %></td>
+                        <td>
+                            
+                            <form action="/deleteReservation/<%= reservation._id %>" method="POST" class="inline-form">
+                                <input type="submit" value="Delete" class="delete-btn">
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

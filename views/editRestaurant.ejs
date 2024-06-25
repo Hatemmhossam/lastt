@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Restaurant</title>
+    <link rel="stylesheet" href="/css/edit.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        
+        .edit-popup {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #4cae4c;
+        }
+        
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #5cb85c;
+        }
+        
+        a:hover {
+            text-decoration: none;
+            color: #4cae4c;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="edit-popup">
+        <h2>Edit Restaurant</h2>
+        <form action="/restaurants/<%= restaurant._id %>/edit" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= restaurant.name %>" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= restaurant.email %>" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="<%= restaurant.password %>" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="<%= restaurant.location %>" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required><%= restaurant.description %></textarea>
+            
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" value="<%= restaurant.category %>" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]+" title="Please enter only numeric characters (0-9)" value="<%= restaurant.phone %>" required>
+            
+            <label for="openingTime">Opening Time:</label>
+            <input type="time" id="openingTime" name="openingTime" value="<%= restaurant.openingTime %>" required>
+            
+            <label for="closingTime">Closing Time:</label>
+            <input type="time" id="closingTime" name="closingTime" value="<%= restaurant.closingTime %>" required>
+            
+            <label for="menuUrl">Menu URL:</label>
+            <input type="url" id="menuUrl" name="menuUrl" value="<%= restaurant.menuUrl %>" required>
+            
+            <label for="locationUrl">Location URL:</label>
+            <input type="url" id="locationUrl" name="locationUrl" value="<%= restaurant.locationUrl %>" required>
+            
+            <label for="logoUrl">Logo URL:</label>
+            <input type="url" id="logoUrl" name="logoUrl" value="<%= restaurant.logoUrl %>" required>
+            
+            <label for="photoUrl">Photo URL:</label>
+            <input type="url" id="photoUrl" name="photoUrl" value="<%= restaurant.photoUrl %>" required>
+            
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="pending" <%= restaurant.status === 'pending' ? 'selected' : '' %>>pending</option>
+                <option value="accepted" <%= restaurant.status === 'accepted' ? 'selected' : '' %>>accepted</option>
+            </select>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+        <a href="/viewRestraunts">Cancel</a>
+    </div>
+</body>
+</html>

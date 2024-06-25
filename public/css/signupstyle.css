@@ -1,0 +1,263 @@
+body {
+    background-image: url('https://www.efinancialmodels.com/wp-content/uploads/2024/04/20240409-162147.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 450px;
+    padding: 20px;
+    margin: 90px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    border: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    width: calc(80% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: dimgrey;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add transition */
+}
+
+input[type="submit"] {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: black;
+  }
+  
+  input[type="submit"]::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:gray;
+    transform-origin: center bottom;
+    transform: scaleY(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #444;
+    opacity: 1; 
+  }
+  
+  input[type="submit"]:hover::before {
+    transform-origin: center top;
+    transform: scaleY(1);
+  }
+
+
+.password-container {
+    position: relative;
+}
+
+#show-password-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#password[type="text"] {
+    -webkit-text-security: none;
+    -moz-text-security: none;
+}
+
+
+h6{
+    color: black;
+    font-size: 13px;
+    text-align: right;
+    margin-right: auto;
+}
+a {
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition */
+}
+
+a[href="#"] {
+    color: blue; /* Set color to blue for the specified link */
+}
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('https://www.efinancialmodels.com/wp-content/uploads/2024/04/20240409-162147.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        color: black;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 36px; /* Adjusted font size for mobile */
+        margin-bottom: 10px; /* Reduced margin bottom for tighter spacing */
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 90%; /* Adjusted width for responsiveness */
+        max-width: 450px; /* Added max-width for larger screens */
+        padding: 20px;
+        margin: 50px auto; /* Adjusted margin for better centering on mobile */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 15px; /* Reduced margin bottom for tighter spacing */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+        border: none;
+        font-size: 16px; /* Increased font size for better readability on mobile */
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px; /* Reduced margin bottom for tighter spacing */
+        color: black;
+        font-size: 18px; /* Adjusted font size for mobile */
+    }
+
+    input[type="submit"] {
+        width: 100%; /* Full width for better touch interaction */
+        padding: 12px; /* Increased padding for better touch target */
+        border-radius: 20px;
+        background-color: dimgrey;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #444;
+    }
+
+    .password-container {
+        position: relative;
+    }
+
+    #show-password-btn {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    #password[type="text"] {
+        -webkit-text-security: none;
+        -moz-text-security: none;
+    }
+
+    h6 {
+        color: black;
+        font-size: 13px;
+        text-align: right;
+        margin-right: auto;
+    }
+
+    a {
+        font-size: 13px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    a[href="#"] {
+        color: blue;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+}    
